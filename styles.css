@@ -1,0 +1,294 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --visor: #1cd947;
+    --visorAlbedo: #f5031c; 
+    --visorScanner: #f5d103;
+
+    --padrao: #0e5e18;
+    --padraoAlbedo: #800000;
+
+    --espera: #009216;
+    --esperaAlbedo: #920000;
+    /* --esperaScanner: #95a000; */
+
+    --cinza: #686f69;
+    --fundo: #092e00;
+    --fundoAlbedo: #2e0000;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    min-height: 100vh;
+    background: var(--fundo);
+}
+
+.omnitrix{
+    position: relative;
+}
+
+.omnitrix .base{
+    position: relative;
+
+    width: 20rem;
+    height: 20rem;
+
+    border-radius: 50%;
+    background-color: var(--cinza);
+
+    box-shadow: inset 4px 4px 18px 7px rgba(0, 0, 0, .75) ;
+}
+
+.omnitrix .base .diskpart{
+    position: absolute;
+
+    width: 10rem;
+    height: 10rem;
+
+    border:solid 2px black;
+    background: var(--cinza);
+    box-shadow: inset 0px 0px 18px 0px rgba(0, 0, 0, .75) ;
+}
+
+.omnitrix .base .diskpart.esq-super{
+    top: 0rem;
+    left: 0rem;
+    
+    border-radius: 100% 0% 0% 0%;
+}
+
+.omnitrix .base .diskpart.esq-inf{
+    top: 0rem;
+    left: 10rem;
+    
+    border-radius: 0% 100% 0% 0%;
+}
+
+.omnitrix .base .diskpart.dir-super{
+    top: 10rem;
+    left: 0rem;
+
+    border-radius: 0% 0% 0% 100%;
+}
+
+.omnitrix .base .diskpart.dir-inf{
+    top: 10rem;
+    left: 10rem;
+    
+    border-radius:0% 0% 100% 0%;
+}
+
+/* Cria e centraliza o disco escuro, ao redor do visor */
+.omnitrix .base .disco{ 
+    position: relative;
+
+    top: 1.5rem;
+    left: 1.5rem;
+
+    width: 17rem;
+    height: 17rem;
+
+    border-radius: 50%;
+    background-color: #000;
+}
+
+/* Cria e centraliza o fundo do Visor (><)*/
+.omnitrix .base .disco .anel{
+    position: relative;
+
+    top: 1rem;
+    left: 1rem;
+
+    width: 15rem;
+    height: 15rem;
+
+    border-radius: 50%;
+    background-color: var(--espera);
+    box-shadow: inset 4px 4px 15px 3px rgba(0, 0, 0, .75) ;
+} 
+.omnitrix .base .disco .anel:hover{
+    background-color: var(--visor);
+}
+
+/* Cria os triângulos do Visor */
+.omnitrix .base .disco .anel .tri-esquerda,
+.omnitrix .base .disco .anel .tri-direita{
+    position: relative;
+
+    width: 100px;
+    height: 200px;
+
+    background-color: #000;
+    
+    clip-path: polygon(100% 50%, 0 0, 0 100%);  /* Cria os triângulos do Visor (><)*/
+    border-radius: 70% 0 0 70%;                 /* Deixa as bordas dos triângulos arrend.*/
+}
+
+/* Posiciona o triângulo da esquerda */
+.omnitrix .base .disco .anel .tri-esquerda{
+    top: 1.5rem;
+    left: -0.1rem;
+}
+
+/* Posiciona o triângulo da direita */
+.omnitrix .base .disco .anel .tri-direita{
+    top: -11rem;
+    left: 8.85rem;
+    transform: rotate(180deg);
+}
+
+.omnitrix .base .btn-horizontal{
+    position: relative;
+
+    top: -8.3rem;
+    left: -1.9rem;
+    z-index: -1;
+
+    width: 24rem;
+    height: 2.5rem;
+
+    border-radius: 8%;
+    background-color: var(--cinza);
+}
+
+.omnitrix .base .btn-horizontal .btn-suporte{
+    position: absolute;
+
+    left: 0.85rem;
+
+    width: 22rem;
+    height: 2.5rem;
+
+    background-color: #000;
+}
+
+.omnitrix .base .pulseira{
+    position: relative;
+
+    top: -21.55rem;
+    left: 6.2rem;
+
+    z-index: -5;
+
+    width: 7.5rem;
+    height: 24rem;
+
+    border:solid 3px black;
+
+    border-radius: 10%;
+    background-color: var(--cinza);
+}
+
+.omnitrix .base .anel-verde{
+    position: relative;
+
+    top: -44.5rem;
+    left: -1rem;
+
+    z-index: -5;
+
+    width: 22rem;
+    height: 22rem;
+
+    border-radius: 50%;
+    background-color: var(--padrao);
+}
+
+.omnitrix .base .anel-verde .divisao{
+    position: relative;
+    
+    top: 6.5rem;
+    left: -1.5rem;
+
+    width: 25rem;
+    height: 9rem;
+
+    background: var(--fundo);
+}
+
+/* Campo dos botões */
+
+.container {
+    background-color: #EBEBEB;
+
+    margin: 5em;
+    padding: 2em;
+
+    border-radius: 15px;
+
+    display: grid;
+    grid-template-areas:
+    'header header header'
+    'nameB btb nameA';
+    gap: 10px;
+
+    justify-items: center;
+    align-items: center;
+}
+
+.title{ grid-area: header;}
+.nameBen{ grid-area: nameB;}
+.nameAlbedo{ grid-area: nameA;}
+
+h1 {
+    margin: 0;
+    color: var(--espera);
+}
+
+.nameBen h3 {
+    color: #009216;
+}
+
+.nameAlbedo h3 {
+    color: #920000;
+}
+
+input[type=checkbox]{
+    height: 0;
+    width: 0;
+    visibility: hidden;
+}
+
+label {
+    cursor: pointer;
+    text-indent: -9999px;
+    width: 52px;
+    height: 27px;
+    background: var(--espera);
+    float: right;
+    border-radius: 100px;
+    position: relative;
+}
+
+label::after{
+    content: '';
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: 20px;
+    height: 20px;
+    background-color: white;
+    border-radius: 90px;
+    transition: 0.3s;
+}
+
+input:checked + label {
+    background-color: var(--espera);
+}
+
+input:checked + label::after {
+    left: calc(100% - 5px);
+    transform: translateX(-100%);
+}
+
+label:active:after {
+    width: 45px;
+}
+
