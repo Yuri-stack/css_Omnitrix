@@ -43,7 +43,7 @@ body{
     border-radius: 50%;
     background-color: var(--cinza);
 
-    box-shadow: inset 4px 4px 18px 7px rgba(0, 0, 0, .75) ;
+    box-shadow: inset 4px 4px 18px 7px rgba(0, 0, 0, .75);
 }
 
 .omnitrix .base .diskpart{
@@ -112,9 +112,12 @@ body{
     border-radius: 50%;
     background-color: var(--espera);
     box-shadow: inset 4px 4px 15px 3px rgba(0, 0, 0, .75) ;
+
+    transition: transform 1s, background-color 2s;
 } 
 .omnitrix .base .disco .anel:hover{
     background-color: var(--visor);
+    transform: rotate(180deg);
 }
 
 /* Cria os triângulos do Visor */
@@ -186,7 +189,7 @@ body{
     background-color: var(--cinza);
 }
 
-.omnitrix .base .anel-verde{
+.omnitrix .base .anel-exterior{
     position: relative;
 
     top: -44.5rem;
@@ -199,9 +202,15 @@ body{
 
     border-radius: 50%;
     background-color: var(--padrao);
+
+    transition: background-color 2s;
 }
 
-.omnitrix .base .anel-verde .divisao{
+.omnitrix .base .anel-exterior:hover{
+    background-color: var(--padrao);
+}
+
+.omnitrix .base .anel-exterior .divisao{
     position: relative;
     
     top: 6.5rem;
